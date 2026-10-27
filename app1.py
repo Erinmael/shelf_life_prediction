@@ -159,23 +159,23 @@ elif st.session_state.current_page == "Predictor":
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.markdown("##### **Chemical Properties**")
-            moisture = st.slider("Moisture Content (%)", min_value=8.0, max_value=15.0, value=12.2, step=0.1)
-            pH = st.slider("pH Level", min_value=5.5, max_value=7.0, value=6.35, step=0.01)
-            acidity = st.slider("Acidity (%)", min_value=0.5, max_value=2.0, value=1.09, step=0.01)
-            water_activity = st.slider("Water Activity ($a_w$)", min_value=0.50, max_value=0.85, value=0.716, step=0.001)
+            st.markdown("##### **Physicochemical Properties**")
+            moisture = st.slider("Moisture Content (%)", min_value=0.0, max_value=15.0, value=12.2, step=0.1)
+            pH = st.slider("pH Level", min_value=0.0, max_value=7.0, value=6.35, step=0.01)
+            acidity = st.slider("Acidity (%)", min_value=0.0, max_value=2.0, value=1.09, step=0.01)
+            water_activity = st.slider("Water Activity ($a_w$)", min_value=0.00, max_value=0.85, value=0.716, step=0.001)
 
         with col2:
             st.markdown("##### **Microbial & Sensory**")
             tpc = st.number_input("Total Plate Count (TPC) (CFU/g)", min_value=0, max_value=500, value=115)
             yeast_mold = st.number_input("Yeast & Mold (CFU/g)", min_value=0, max_value=100, value=14)
-            sensory = st.slider("Sensory Acceptability (1-10)", min_value=5.0, max_value=10.0, value=9.0, step=0.1)
+            sensory = st.slider("Sensory Acceptability (1-10)", min_value=1.0, max_value=10.0, value=9.0, step=0.1)
 
         with col3:
             st.markdown("##### **CIELAB Color Coordinates**")
-            L = st.slider("L* (Lightness)", min_value=20.0, max_value=50.0, value=32.1, step=0.1)
+            L = st.slider("L* (Lightness)", min_value=0.0, max_value=50.0, value=32.1, step=0.1)
             a = st.slider("a* (Redness)", min_value=0.0, max_value=15.0, value=8.0, step=0.1)
-            b = st.slider("b* (Yellowness)", min_value=5.0, max_value=25.0, value=13.8, step=0.1)
+            b = st.slider("b* (Yellowness)", min_value=0.0, max_value=25.0, value=13.8, step=0.1)
             
         submit_button = st.form_submit_button("🔮 Submit & Calculate Predictions", use_container_width=True)
         
